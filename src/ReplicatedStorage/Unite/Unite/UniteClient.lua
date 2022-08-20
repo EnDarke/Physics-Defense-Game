@@ -43,7 +43,16 @@ type UniteOptions = {
 --\\ Setup //--
 local UniteClient = {}
 UniteClient.Player = Players.LocalPlayer
-UniteClient.Collection = Parent.Parent.Collection
+
+-- Getting the collection setup
+UniteClient.Collection = {}
+for _, module in ipairs(Parent.Parent.Collection:GetChildren()) do
+    if module:IsA("ModuleScript") then
+        UniteClient.Collection[module.Name] = require(module)
+    else
+        continue
+    end
+end
 
 local normalOptions: UniteOptions = {
     AmenityOaths = true;
@@ -55,8 +64,8 @@ local chosenOptions = nil
 
 local instance = Instance.new
 
-local Oath = require(UniteClient.Collection.Oath)
-local Commune = require(UniteClient.Collection.Commune)
+local Oath = UniteClient.Collection.Oath
+local Commune = UniteClient.Collection.Commune
 local ClientCommune = Commune.ClientCommune
 
 local managers: {[string]: Manager} = {}

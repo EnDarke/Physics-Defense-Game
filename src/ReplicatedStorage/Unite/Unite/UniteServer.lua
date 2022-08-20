@@ -46,7 +46,16 @@ type UniteOptions = {
 
 --\\ Setup //--
 local UniteServer = {}
-UniteServer.Collection = Parent.Parent.Collection
+
+-- Getting the collection setup
+UniteServer.Collection = {}
+for _, module in ipairs(Parent.Parent.Collection:GetChildren()) do
+    if module:IsA("ModuleScript") then
+        UniteServer.Collection[module.Name] = require(module)
+    else
+        continue
+    end
+end
 
 local normalOptions: UniteOptions = {
     Route = nil;
@@ -69,8 +78,8 @@ local instance = Instance.new
 local uniteRefAmenityFolder = instance("Folder")
 uniteRefAmenityFolder.Name = "Amenities"
 
-local Oath = require(UniteServer.Collection.Oath)
-local Commune = require(UniteServer.Collection.Commune)
+local Oath = UniteServer.Collection.Oath
+local Commune = UniteServer.Collection.Commune
 local ServerCommune = Commune.ServerCommune
 
 local amenities: {[string]: Amenity} = {}

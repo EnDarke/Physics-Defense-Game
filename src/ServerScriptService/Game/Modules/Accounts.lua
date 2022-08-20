@@ -9,7 +9,7 @@ local Collection = Unite.Collection
 local Settings = Unite.Settings
 
 --\\ Modules //--
-local Util = require(Collection.Util)
+local Util = Collection.Util
 
 --\\ Settings //--
 local AccountSettings = Settings.Accounts

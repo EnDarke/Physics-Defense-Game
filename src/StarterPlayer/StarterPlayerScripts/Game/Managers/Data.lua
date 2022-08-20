@@ -23,7 +23,7 @@ end
 function DataManager:UniteStart()
     -- Getting the server module for player data
     local DataAmenity = Unite.AcquireAmenity("DataAmenity")
-    DataAmenity:Get(Unite.Services.Players.LocalPlayer):Follow(function(data)
+    DataAmenity:Get(Unite.Player):Follow(function(data)
         print(data)
     end)
 end
