@@ -1,9 +1,3 @@
-local DataStoreService = game:GetService("DataStoreService")
-local PathfindingService = game:GetService("PathfindingService")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local ServerScriptService = game:GetService("ServerScriptService")
-local ServerStorage = game:GetService("ServerStorage")
-local SoundService = game:GetService("SoundService")
 -- !strict
 
 -- Author: Alex/EnDarke
@@ -22,7 +16,7 @@ type ServerRouteFunction = (player: Player, args: {any}) -> (boolean, ...any)
 type ServerRoute = {ServerRoute}
 
 type AmenityDef = {
-    Name: string,
+    Name: string;
     Client: {[any]: any}?;
     Route: Route?;
     [any]: any;

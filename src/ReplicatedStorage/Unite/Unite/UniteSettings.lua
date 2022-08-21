@@ -13,7 +13,7 @@ local UniteSettings = {}
 
 UniteSettings.Data = {
     PlayerScope = "Player_DEV_A1"; -- Remove '_Dev' when using the public data store
-    PlayerKey = "Poly_";
+    PlayerKey = "Defense_";
 }
 
 UniteSettings.Accounts = {
@@ -34,6 +34,19 @@ UniteSettings.Accounts = {
         ForeLoadSession = true;
         LastUpdate = true;
     };
+}
+
+UniteSettings.Match = {
+    Maximum_Matches = 5;
+    TotalTime = 30;
+    Base_Mob_Count = 10;
+}
+
+UniteSettings.Pathfinding = {
+    DisplayGrid = true;
+    DisplayOnlyPath = true;
+    GridWorldSize = Vector2.new(56, 56);
+    NodeRadius = 2;
 }
 
 UniteSettings.Admin = {
