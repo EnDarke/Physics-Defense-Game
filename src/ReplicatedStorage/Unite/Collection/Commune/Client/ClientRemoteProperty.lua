@@ -3,7 +3,7 @@
 -- Author: Alex/EnDarke
 -- Description: Handles client remote properties. Inspiration from Sleitnick
 
-local Parent = script.Parent
+local Parent: Instance = script.Parent
 
 --\\ Modules //--
 local Indexing = require(Parent.Parent.Indexing)

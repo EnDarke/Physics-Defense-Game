@@ -3,7 +3,7 @@
 -- Author: Alex/EnDarke
 -- Description: Server for communication. Inspiration from Sleitnick
 
-local Parent = script.Parent
+local Parent: Instance = script.Parent
 
 --\\ Modules //--
 local Util = require(Parent.Util)

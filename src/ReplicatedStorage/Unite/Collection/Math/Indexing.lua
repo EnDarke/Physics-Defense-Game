@@ -3,7 +3,7 @@
 -- Author: Alex/EnDarke
 -- Description: Used for indexing collections
 
-local Parent = script.Parent
+local Parent: Instance = script.Parent
 
 --\\ Module Code //--
 return function(name)

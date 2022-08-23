@@ -3,7 +3,7 @@
 -- Author: Alex/EnDarke
 -- Description: Framework client handling. Inspired by the great Knit framework by Sleitnick and his team.
 
-local Parent = script.Parent
+local Parent: Instance = script.Parent
 
 --\\ Services //--
 local Players = game:GetService("Players")
@@ -54,6 +54,8 @@ for _, module in ipairs(Parent.Parent.Collection:GetChildren()) do
     end
 end
 
+UniteClient.Signals = {}
+
 local normalOptions: UniteOptions = {
     AmenityOaths = true;
     Route = nil;
@@ -89,13 +91,10 @@ UniteClient.Services = {
     -- Other Services
     Run = game:GetService("RunService");
     Http = game:GetService("HttpService");
-    DataStore = game:GetService("DataStoreService");
+    Collection = game:GetService("CollectionService");
     Tween = game:GetService("TweenService");
     Marketplace = game:GetService("MarketplaceService");
-    Badge = game:GetService("BadgeService");
     UserInput = game:GetService("UserInputService");
-    PathfindingService = game:GetService("PathfindingService");
-    ContextAction = game:GetService("ContextActionService");
 }
 
 --\\ Local Utility Functions //--

@@ -3,7 +3,7 @@
 -- Author: Alex/EnDarke
 -- Description: Holds all game settings that are changeable
 
-local Parent = script.Parent
+local Parent: Instance = script.Parent
 
 --\\ Modules //--
 local Util = require(Parent.Parent.Collection.Util)
@@ -37,16 +37,11 @@ UniteSettings.Accounts = {
 }
 
 UniteSettings.Match = {
-    Maximum_Matches = 5;
-    TotalTime = 30;
-    Base_Mob_Count = 10;
-}
+    Intermission_Time = 10;
+    Total_Time = 30;
+    Castle_Health = 50;
 
-UniteSettings.Pathfinding = {
-    DisplayGrid = true;
-    DisplayOnlyPath = true;
-    GridWorldSize = Vector2.new(56, 56);
-    NodeRadius = 2;
+    Node_Radius = 2;
 }
 
 UniteSettings.Admin = {

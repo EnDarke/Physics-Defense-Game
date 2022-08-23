@@ -964,7 +964,7 @@ function Account:SetMetaTag(tag_name, value)
 end
 
 function Account:Reconcile()
-	Util.reconcileTable(self.Data, self._account_store._account_template)
+	Util._reconcileTable(self.Data, self._account_store._account_template)
 end
 
 function Account:ListenToRelease(listener)

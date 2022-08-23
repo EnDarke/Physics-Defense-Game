@@ -89,7 +89,7 @@ function sort:remove(): any
     end
 end
 
-function sort:currenTop(): any
+function sort:currentTop(): any
     if #self > 0 then
         return self[1]
     end

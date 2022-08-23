@@ -3,7 +3,7 @@
 -- Author: Alex/EnDarke
 -- Description: Handles object shaking. Inspiration from Sleitnick
 
-local Parent = script.Parent
+local Parent: Instance = script.Parent
 
 --\\ Services //--
 local RunService = game:GetService("RunService")

@@ -7,7 +7,7 @@
 local Node: {} = {}
 Node.__index = Node
 
-function Node.new(_walkable, _worldPos, _gridX, _gridY)
+function Node.new(_walkable: boolean, _worldPos: Vector3, _gridX: number, _gridY: number)
     local self = setmetatable({}, Node)
 
     self.walkable = _walkable

@@ -3,7 +3,7 @@
 -- Author: Alex/EnDarke
 -- Description: Framework server handling. Inspired by the great Knit framework by Sleitnick and his team.
 
-local Parent = script.Parent
+local Parent: Instance = script.Parent
 
 --\\ Types //--
 type Route = {
@@ -51,6 +51,8 @@ for _, module in ipairs(Parent.Parent.Collection:GetChildren()) do
     end
 end
 
+UniteServer.Signals = {}
+
 local normalOptions: UniteOptions = {
     Route = nil;
 }
@@ -97,6 +99,8 @@ UniteServer.Services = {
     Run = game:GetService("RunService");
     Http = game:GetService("HttpService");
     DataStore = game:GetService("DataStoreService");
+    Physics = game:GetService("PhysicsService");
+    Collection = game:GetService("CollectionService");
     Tween = game:GetService("TweenService");
     Marketplace = game:GetService("MarketplaceService");
     Badge = game:GetService("BadgeService");

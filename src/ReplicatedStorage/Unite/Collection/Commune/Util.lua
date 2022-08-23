@@ -3,7 +3,7 @@
 -- Author: Alex/EnDarke
 -- Description: Utility library for communication. Inspired by Sleitnick's communication module.
 
-local Parent = script.Parent
+local Parent: Instance = script.Parent
 
 --\\ Services //--
 local runService = game:GetService("RunService")

@@ -25,8 +25,22 @@ local len = string.len
 local gsub = string.gsub
 local btest = bit32.btest
 
+local vector3 = Vector3.new
+
 --\\ Module Code //--
 local Util = {}
+
+--\\ Hold new objects //--
+Util.Vector3 = {
+	new = Vector3.new;
+	one = Vector3.one;
+	up = vector3(0, 1, 0);
+	down = vector3(0, -1, 0);
+	left = vector3(-1, 0, 0);
+	right = vector3(1, 0, 0);
+	forward = vector3(0, 0, 1);
+	backward = vector3(0, 0, -1);
+}
 
 -- Creates a new table mirrored from another
 function Util._deepCopy(t: table): table
@@ -81,6 +95,11 @@ function Util._makeSortedList(list: table, isArray: boolean)
 		end
     end)
 	return list
+end
+
+-- Getting the time based from distance
+function Util._getTimeFromDistance(distance: number, speed: number)
+	return distance / speed
 end
 
 -- Creates a unique user id for making object's and object names unique for unique instantiation
