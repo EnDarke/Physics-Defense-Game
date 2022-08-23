@@ -102,6 +102,10 @@ function Mob:FollowPath()
     coroutine.wrap(function()
         local currentWaypoint = self.path[1]
 
+        self.instance.Anchored = false
+        self.instance:SetNetworkOwner(nil)
+        self.instance.Anchored = true
+
         for _, waypoint in ipairs(self.path) do
             if not self.gotHit then
                 self.targetIndex += 1
