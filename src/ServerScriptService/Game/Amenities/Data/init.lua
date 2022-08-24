@@ -75,16 +75,6 @@ local function onPlayerAdded(player: Player)
                 end
             end
 
-            --[[local wins = instance("NumberValue")
-            wins.Name = "Wins"
-            wins.Value = account.Data.Core.Wins
-            wins.Parent = leaderstats
-
-            local kills = instance("NumberValue")
-            kills.Name = "Kills"
-            kills.Value = account.Data.Core.Kills
-            kills.Parent = leaderstats]]
-
             -- Waiting on Character to setup collisions
             local character = player.Character or player.CharacterAdded:Wait()
             setObjectCollisionsRecursive(character, "User")

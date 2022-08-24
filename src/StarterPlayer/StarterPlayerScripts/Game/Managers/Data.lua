@@ -18,6 +18,9 @@ function DataManager:UniteInit()
 end
 
 function DataManager:UniteStart()
+    -- Locking player's camera to first person
+    Unite.Player.CameraMode = Enum.CameraMode.LockFirstPerson
+
     -- Getting the server module for player data
     local DataAmenity = Unite.AcquireAmenity("DataAmenity")
     DataAmenity:Get():Follow(function(data)
