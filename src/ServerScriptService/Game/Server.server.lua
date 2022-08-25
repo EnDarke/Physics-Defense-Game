@@ -20,10 +20,10 @@ type ServerRouteFunction = (Instance, Args) -> (boolean, ...any)
 type ServerRoute = {ServerRouteFunction}
 type Commune = {
     _instancesFolder: Folder;
-    BindableFunction: ({name: string, fn: FnBind, inboundRoute: ServerRoute?, outboundRoute: ServerRoute?}) -> ();
-    Wrap: ({tbl: {}, name: string, inboundRoute: ServerRoute?, outboundRoute: ServerRoute?}) -> ();
-    ForgeSignal: ({name: string, inboundRoute: ServerRoute?, outboundRoute: ServerRoute?}) -> ();
-    ForgeProperty: ({name: string, initialValue: any, inboundRoute: ServerRoute?, outboundRoute: ServerRoute?}) -> ();
+    BindableFunction: ({name: string, fn: FnBind, inboundRoute: ServerRoute?, outboundRoute: ServerRoute?}) -> (any);
+    Wrap: ({tbl: {}, name: string, inboundRoute: ServerRoute?, outboundRoute: ServerRoute?}) -> (any);
+    ForgeSignal: ({name: string, inboundRoute: ServerRoute?, outboundRoute: ServerRoute?}) -> (any);
+    ForgeProperty: ({name: string, initialValue: any, inboundRoute: ServerRoute?, outboundRoute: ServerRoute?}) -> (any);
     Destroy: () -> ();
 }
 
@@ -31,6 +31,7 @@ type Commune = {
 local commune = collection.Commune.ServerCommune
 
 --\\ Variables //--
+local folder: Folder = Instance.new("Folder")
 local serverCommune: Commune = commune.new(services.ReplicatedStorage, "Communication")
 signals.Announce = serverCommune:ForgeSignal("Announce")
 
